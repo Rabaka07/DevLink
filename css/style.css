@@ -15,6 +15,15 @@
   --switch-bg-url: url(../img/MoonStars.svg);
   --highlight-color: rgba(255, 255, 255, 0.2);
 }
+.light {
+    --bg-url: url(../img/bg-desktop.jpg);
+    --text-color: #000;
+    --storke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.1);
+    --surface-color-hover: rgba(0, 0, 0, 0.5);
+    --switch-bg-url: url(../img/Sun.svg);
+    --highlight-color: rgba(0, 0, 0, 0.2);
+  }
 
 /* Modicações do body */
 
@@ -69,10 +78,18 @@ body {
   z-index: 1;
   top: 50%;
   transform: translateY(-50%);
+  
+  animation: slide-out 0.2s;
 }
+
+
 
 #switch button:hover {
   outline: 8px solid var(--highlight-color);
+}
+
+.light #switch button{
+    animation: slide-in 0.2s forwards;
 }
 
 #switch span {
@@ -133,4 +150,22 @@ body {
 }
 #footer a {
   text-decoration: none;
+}
+
+/* animacoes */
+@keyframes slide-in {
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%;
+    }
+}
+@keyframes slide-out {
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+    }
 }
